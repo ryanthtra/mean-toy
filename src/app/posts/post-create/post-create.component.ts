@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { Post } from "../post.model";
-import { NgForm } from "@angular/forms";
-import { PostsService } from "../posts.service";
+import { Component, OnInit } from '@angular/core';
+import { Post } from '../post.model';
+import { NgForm } from '@angular/forms';
+import { PostsService } from '../posts.service';
 // import { EventEmitter } from "protractor";
 
 @Component({
-  selector: "app-post-create",
-  templateUrl: "./post-create.component.html",
-  styleUrls: ["./post-create.component.css"]
+  selector: 'app-post-create',
+  templateUrl: './post-create.component.html',
+  styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-  newPost = "NO CONTENT";
-  enteredContent = "";
-  enteredTitle = "";
+  newPost = 'NO CONTENT';
+  enteredContent = '';
+  enteredTitle = '';
 
   constructor(private service: PostsService) {}
 
@@ -24,7 +24,6 @@ export class PostCreateComponent implements OnInit {
       return;
     }
     this.service.addPost(form.value.title, form.value.content);
-    form.value.title = "";
-    form.value.content = "";
+    form.resetForm();
   }
 }
