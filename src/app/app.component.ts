@@ -8,9 +8,4 @@ import { Post } from "./posts/post.model";
 })
 export class AppComponent {
   title = "mean-toy";
-  appPosts: Post[] = [];
-
-  onPostAdded(post: Post) {
-    this.appPosts.push(post);
-  }
 }
