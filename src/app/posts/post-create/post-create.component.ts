@@ -46,6 +46,7 @@ export class PostCreateComponent implements OnInit {
     }
     if (this.mode === "create") {
       this.service.addPost(form.value.title, form.value.content);
+      form.resetForm();
     } else {
       this.service.updatePost(
         this.postId,
@@ -53,6 +54,5 @@ export class PostCreateComponent implements OnInit {
         form.value.content
       );
     }
-    form.resetForm();
   }
 }
